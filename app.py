@@ -17,7 +17,7 @@ def main():
 
     @st.cache(persist=True)
     def load_data():
-        data=pd.read_csv("/home/rhyme/Desktop/Project/mushrooms.csv")
+        data=pd.read_csv("https://raw.githubusercontent.com/whitehatjr-test/Mushroom/main/mushrooms.csv")
         label= LabelEncoder()
         for col in data.columns:
             data[col] = label.fit_transform(data[col])
