@@ -10,6 +10,7 @@ from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precisio
 from sklearn.metrics import precision_score, recall_score 
 
 def main():
+    st.set_option('deprecation.showPyplotGlobalUse', False)
     st.title("Binary Classification Web app")
     st.sidebar.title("Binary Classification Web app")
     st.markdown("Are your mushrooms edible or poisonous?  🍄")
