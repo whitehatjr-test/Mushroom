@@ -28,18 +28,18 @@ def main():
     def plot_metrics(metrics_list):
         if 'Confusion Matrix' in metrics_list:
             st.subheader("Confusion Matrix")
-            plot_confusion_matrix(model, x_test, y_test, display_labels=class_names)
-            st.pyplot()
+            fig = plot_confusion_matrix(model, x_test, y_test, display_labels=class_names)
+            st.pyplot(fig)
         
         if 'ROC Curve' in metrics_list:
             st.subheader("Roc curve")
-            plot_roc_curve(model, x_test, y_test)
-            st.pyplot()
+            fig = plot_roc_curve(model, x_test, y_test)
+            st.pyplot(fig)
         
         if 'Precison- Recall Curve' in metrics_list:
             st.subheader("Precision Recall curve")
-            plot_roc_curve(model, x_test, y_test)
-            st.pyplot()
+            fig = plot_roc_curve(model, x_test, y_test)
+            st.pyplot(fig)
 
     @st.cache(persist=True)
     def split(df):
