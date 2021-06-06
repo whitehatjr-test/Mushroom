@@ -29,17 +29,17 @@ def main():
         if 'Confusion Matrix' in metrics_list:
             st.subheader("Confusion Matrix")
             fig = plot_confusion_matrix(model, x_test, y_test, display_labels=class_names)
-            st.pyplot(fig)
+            st.plotly_chart(fig)
         
         if 'ROC Curve' in metrics_list:
             st.subheader("Roc curve")
             fig = plot_roc_curve(model, x_test, y_test)
-            st.pyplot(fig)
+            st.plotly_chart(fig)
         
         if 'Precison- Recall Curve' in metrics_list:
             st.subheader("Precision Recall curve")
             fig = plot_roc_curve(model, x_test, y_test)
-            st.pyplot(fig)
+            st.plotly_chart(fig)
 
     @st.cache(persist=True)
     def split(df):
